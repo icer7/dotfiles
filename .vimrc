@@ -1,3 +1,12 @@
+" init autocmd
+autocmd!
+
+" set script encoding
+scriptencoding utf-8
+
+" stop loading config if it's on tiny or small
+if !1 | finish | endif
+
 " 行番号表示
 set number
 
@@ -5,7 +14,7 @@ set number
 filetype plugin indent on
 
 " シンタックスハイライト
-syntax on
+syntax enable
 
 " 文字コード変換
 set encoding=utf-8
