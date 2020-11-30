@@ -87,3 +87,4 @@ on_cmd = [
 hook_add = """
 source ~/.config/nvim/plugins/fzf.rc.vim
 """
+
