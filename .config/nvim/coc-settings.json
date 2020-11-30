@@ -3,6 +3,7 @@
   "eslint.autoFixOnSave": true,
   "eslint.autoFix": true,
   "tsserver.enableJavascript": false,
+  "python.jediPath": "~/.pyenv/versions/anaconda3-5.3.1/lib/python3.7/site-packages/",
   "languageserver": {
     "flow": {
       "command": "flow",
@@ -12,6 +13,36 @@
       "requireRootPattern": true,
       "settings": {},
       "rootPatterns": [".flowconfig"]
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    },
+    "dockerfile": {
+      "command": "docker-languageserver",
+      "filetypes": ["Dockerfile", "dockerfile"],
+      "args": ["--stdio"]
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    },
+    "python": {
+      "command": "pyls",
+      "filetypes": ["python"],
+      "settings": {
+        "pyls": {
+          "plugins": {
+            "autopep8": { "enabled": false },
+            "pydocstyle": { "enabled": false },
+            "yapf": { "enabled": false },
+            "pylint": { "enabled": false }
+          }
+        }
+      }
     }
   },
   "diagnostic.errorSign": "✘",
