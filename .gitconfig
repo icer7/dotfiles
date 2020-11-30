@@ -1,0 +1,11 @@
+[user]
+	name = icer7
+	email = ryo0104777@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+	editor = nvim
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
