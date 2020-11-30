@@ -1,4 +1,0 @@
-[[plugins]]
-repo = 'stephpy/vim-yaml'
-on_ft = ['yaml']
-
