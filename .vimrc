@@ -7,21 +7,6 @@ scriptencoding utf-8
 " stop loading config if it's on tiny or small
 if !1 | finish | endif
 
-" 行番号表示
-set number
-
-" ファイルを開いたときにファイルの種類を検出する機能
-filetype plugin indent on
-
-" シンタックスハイライト
-syntax on 
-
-" 文字コード変換
-set encoding=utf-8
-
-" クリップボード機能
-set clipboard=unnamedplus
-
 "-------------------------------------------------------------------------------
 " Dein
 "-------------------------------------------------------------------------------
@@ -62,3 +47,18 @@ endif
 if dein#check_install()
   call dein#install()
 endif
+
+" 行番号表示
+set number
+
+" ファイルを開いたときにファイルの種類を検出する機能
+filetype plugin indent on
+
+" シンタックスハイライト
+syntax enable
+
+" 文字コード変換
+set encoding=utf-8
+
+" クリップボード機能
+set clipboard=unnamedplus
