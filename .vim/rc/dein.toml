@@ -76,3 +76,10 @@ rev = "release"
 hook_add = """
 source ~/.config/nvim/plugins/coc.rc.vim
 """
+
+[[plugins]]
+repo = 'luochen1990/rainbow'
+hook_add = """
+    let g:rainbow_active = 1
+"""
+
