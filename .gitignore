@@ -23,6 +23,7 @@
 /.zsh/completion/**
 !/.virc
 !/.vimrc
+!/.vimrc.*
 !/.vim/
 !/.vim/*/
 !/.vim/rc/
@@ -38,6 +39,8 @@
 !/.bin/**
 !/.bin.local
 !/.tmux.conf
+!/.tmux.conf.*
+!/.tmux.*
 !/.tmux/
 !/.tmux/conf/
 !/.tmux/conf/**
@@ -60,6 +63,7 @@
 !/.config/**
 !/.gitignore_global
 !/.gitconfig_shared
+!/.gitconfig
 
 !/README.md
 !/LICENSE
