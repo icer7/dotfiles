@@ -1,16 +1,16 @@
-"行番号表示
+" 行番号表示
 set number
 
-"ファイルを開いたときにファイルの種類を検出する機能
+" ファイルを開いたときにファイルの種類を検出する機能
 filetype plugin indent on
 
-"シンタックスハイライト
+" シンタックスハイライト
 syntax on
 
-"文字コード変換
+" 文字コード変換
 set encoding=utf-8
 
-"クリップボード機能
+" クリップボード機能
 set clipboard=unnamedplus
 
 "-------------------------------------------------------------------------------
@@ -18,6 +18,7 @@ set clipboard=unnamedplus
 "-------------------------------------------------------------------------------
 " プラグインが実際にインストールされるディレクトリ
 let s:dein_dir = expand('~/.cache/dein')
+
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
