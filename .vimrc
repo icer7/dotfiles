@@ -130,6 +130,10 @@ set formatoptions+=r
 " 検索対象ファイル
 set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 
+" Finding files - Search down into subfolders
+set path+=**
+set wildignore+=*/node_modules/*
+
 "-------------------------------------------------------------------------------
 " Cursor line
 "-------------------------------------------------------------------------------
@@ -159,3 +163,47 @@ endif
 
 set guifont=Sauce\ Code\ Pro\ Light\ Nerd\ Font\ Complete\ Windows\ Compatible:h11
 let g:webdevicons_enable_vimfiler = 1
+
+"-------------------------------------------------------------------------------
+" Other plugins
+"-------------------------------------------------------------------------------
+
+" vim-go
+let g:go_disable_autoinstall = 1
+
+" vim-json
+let g:vim_json_syntax_conceal = 0
+
+" Status line
+if !exists('*fugitive#statusline')
+  set statusline=%F\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}[L%l/%L,C%03v]
+  set statusline+=%=
+  set statusline+=%{fugitive#statusline()}
+endif
+
+" JSX
+let g:jsx_ext_required = 0
+
+" Tern
+" Disable auto preview window
+set completeopt-=preview
+
+" localvimrc
+let g:localvimrc_ask = 0
+
+"-------------------------------------------------------------------------------
+" imports
+"-------------------------------------------------------------------------------
+
+if has("unix")
+  let s:uname = system("uname -s")
+  " Do Mac stuff
+  if s:uname == "Darwin\n"
+    source ~/.vimrc.osx
+  endif
+endif
+
+source ~/.vimrc.maps
+source ~/.vimrc.lightline
+
+set exrc
