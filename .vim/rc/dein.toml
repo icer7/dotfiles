@@ -27,12 +27,6 @@ repo = 'kristijanhusak/defx-icons'
 repo = 'kristijanhusak/defx-git'
 
 [[plugins]]
-repo = 'Shougo/denite.nvim'
-hook_add = """
-source ~/.config/nvim/plugins/denite.rc.vim
-"""
-
-[[plugins]]
 repo = 'Shougo/vimproc.vim'
 hook_post_update = '''
   if dein#util#_is_windows()
@@ -78,8 +72,18 @@ source ~/.config/nvim/plugins/coc.rc.vim
 """
 
 [[plugins]]
-repo = 'luochen1990/rainbow'
+repo = 'junegunn/fzf.vim'
+on_cmd = [
+    'Files',
+    'ProjectFiles',
+    'Buffers',
+    'BLines',
+    'History',
+    'Tags',
+    'BTags',
+    'GFiles',
+    'Ag',
+]
 hook_add = """
-    let g:rainbow_active = 1
+source ~/.config/nvim/plugins/fzf.rc.vim
 """
-

@@ -1,8 +1,21 @@
-# 最初にすべての階層のファイルを無視します
-# 階層は必要なだけ追加する
-### all ignore ###
-/*
+### ignore ###
+# /*
 /.**
+/y
+/Applications
+/Desktop
+/Documents
+/Downloads
+/ILSpy
+/Library
+/Movies
+/Music
+/Pictures
+/Public
+/VirtualBox VMs
+/iterm
+/phpenv
+/cups
 
 # .gitignoreは上から解釈されていくので
 # 管理対象のファイルをホワイトリストのように追記します
@@ -59,8 +72,8 @@
 !/.xinitrc
 !/.xprofile
 !/.xsessionrc
-!/.config/
-!/.config/**
+!/.config/alacritty
+!/.config/nvim
 !/.gitignore_global
 !/.gitconfig_shared
 !/.gitconfig
