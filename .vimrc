@@ -48,6 +48,9 @@ if dein#check_install()
   call dein#install()
 endif
 
+"""""""""""""""""""""
+" 基本設定
+"""""""""""""""""""""
 " 行番号表示
 set number
 
@@ -62,3 +65,97 @@ set encoding=utf-8
 
 " クリップボード機能
 set clipboard=unnamedplus
+
+" ウインドウのタイトルバーにファイルのパス情報等を表示する
+set title
+
+" 改行時に前の行のインデントを継続する
+set autoindent
+
+" バックアップファイル出力無効
+set nobackup
+
+" 検索結果をハイライト表示する
+set hlsearch
+
+" 入力中のコマンドを表示する
+set showcmd
+
+" メッセージ表示欄を1行確保
+set cmdheight=1
+
+" ステータス行を常に表示
+set laststatus=2
+
+" 上下10行の視界を確保
+set scrolloff=10
+
+" タブ入力を複数の空白入力に置き換える
+set expandtab
+
+" incremental substitution (neovim)
+if has('nvim')
+  set inccommand=split
+endif
+
+" スクロールが遅くなる問題解決
+set lazyredraw
+
+" 大文字と小文字を区別しない
+set ignorecase
+
+" 改行時に、前の行と同じ数だけ自動でインデントを挿入される
+set ai "Auto indent
+
+" 改行時に、ブロックに応じて自動でインデント数を調整して挿入される
+set si "Smart indent
+
+" 行の折り返し表示をやめる
+set nowrap
+
+" Backspaceキーの影響範囲に制限を設けない
+set backspace=indent,eol,start
+
+" ペーストモードでいる事は無いので、挿入モードからノーマルモードに戻る時に自動で解除
+autocmd InsertLeave * set nopaste
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+" 改行時にコメント継続するのをやめる
+set formatoptions+=r
+
+" 検索対象ファイル
+set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
+
+"-------------------------------------------------------------------------------
+" Cursor line
+"-------------------------------------------------------------------------------
+
+set cursorline
+"set cursorcolumn
+
+" Set cursor line color on visual mode
+highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
+
+highlight LineNr       cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
+
+augroup BgHighlight
+  autocmd!
+  autocmd WinEnter * set cul
+  autocmd WinLeave * set nocul
+augroup END
+
+if &term =~ "screen"
+  autocmd BufEnter * if bufname("") !~ "^?[A-Za-z0-9?]*://" | silent! exe '!echo -n "\ek[`hostname`:`basename $PWD`/`basename %`]\e\\"' | endif
+  autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
+endif
+
+"-------------------------------------------------------------------------------
+" DevIcons
+"-------------------------------------------------------------------------------
+
+set guifont=Sauce\ Code\ Pro\ Light\ Nerd\ Font\ Complete\ Windows\ Compatible:h11
+let g:webdevicons_enable_vimfiler = 1

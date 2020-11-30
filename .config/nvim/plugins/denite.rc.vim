@@ -88,3 +88,4 @@ nnoremap <silent> ;r :<C-u>Dgrep<CR>
 nnoremap <silent> ;f :<C-u>Denite file/rec<CR>
 nnoremap <silent> ;; :<C-u>Denite command command_history<CR>
 nnoremap <silent> ;p :<C-u>Denite -resume<CR>
+
