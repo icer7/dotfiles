@@ -14,7 +14,7 @@ set number
 filetype plugin indent on
 
 " シンタックスハイライト
-syntax enable
+syntax on 
 
 " 文字コード変換
 set encoding=utf-8
