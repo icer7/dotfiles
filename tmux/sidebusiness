@@ -1,0 +1,16 @@
+#! /bin/bash
+
+tmux new-window
+tmux send-keys 'cd ~/work/l/playbook/docker/lancers_app' 'C-m'
+
+tmux split-window -v -p 30
+tmux send-keys 'cd ~/work/l/playbook/docker' 'C-m'
+
+tmux split-window -h -p 66
+tmux send-keys 'cd ~/work/l/playbook/docker/lancers_app' 'C-m'
+
+tmux split-window -h -p 50
+tmux send-keys 'cd ~/work/l/www/lancers/frontend' 'C-m'
+
+tmux split-window -v
+tmux send-keys 'cd ~/work/l/www/lancers/frontend' 'C-m'
