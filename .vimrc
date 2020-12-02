@@ -207,3 +207,6 @@ source ~/.vimrc.maps
 source ~/.vimrc.lightline
 
 set exrc
+
+# 検索ハイライトを解除するにはescキーを2押す
+nnoremap <ESC><ESC> :nohl<CR>
