@@ -1,0 +1,10 @@
+#! /bin/bash
+
+tmux new-window
+tmux send-keys 'cd ~/work' 'C-m'
+
+tmux split-window -v -p 30
+tmux send-keys 'cd ~/work' 'C-m'
+
+tmux split-window -h
+tmux send-keys 'cd ~/work' 'C-m'
