@@ -1,0 +1,58 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+if [ -e /usr/local/share/zsh-completions ]; then
+  fpath=(/usr/local/share/zsh-completions /Users/r0360/.zprezto/modules/prompt/functions /Users/r0360/.zprezto/modules/completion/external/src /Users/r0360/.zprezto/modules/helper/functions /Users/r0360/.zprezto/modules/utility/functions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.7.1/functions)
+fi
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir newline vcs)
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+alias dc='docker-compose -f my-docker-compose.yml'
+alias dim='docker images | head'
+alias dps='docker ps'
+
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export PATH="/Users/r0360/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+
+export PATH="/usr/local/opt/bison@2.7/bin:$PATH"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+alias norminette="~/.norminette/norminette.rb"
+
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
+export PATH=$HOME/.goenv/bin:$PATH
+eval "$(goenv init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/r0360/y/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/r0360/y/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/r0360/y/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/r0360/y/google-cloud-sdk/completion.zsh.inc'; fi
+
+# nvimを標準にする
+alias vim='nvim'
+
+# gitのエイリアス
+alias g='git'
+
+#neovim設定ファイル
+export XDG_BASE_HOME='$HOME/.config'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# github cliのコマンド補完の設定
+eval "$(gh completion -s zsh)"
