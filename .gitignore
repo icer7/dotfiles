@@ -83,3 +83,4 @@
 !/LICENSE
 !.gitignore
 !.gitkeep
+!.zshrc
