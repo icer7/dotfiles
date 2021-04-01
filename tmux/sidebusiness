@@ -4,13 +4,27 @@ tmux new-window
 tmux send-keys 'cd ~/work/l' 'C-m'
 
 tmux split-window -v -p 30
-tmux send-keys 'cd ~/work/l/playbook/docker' 'C-m'
+tmux send-keys 'cd ~/work/hopper-functions' 'C-m'
 
-tmux split-window -h -p 66
-tmux send-keys 'cd ~/work/l/playbook/docker/lancers_app' 'C-m'
+# 最初のペインに戻る
+tmux select-pane -t 0
 
-tmux split-window -h -p 50
-tmux send-keys 'cd ~/work/l/www/lancers/frontend' 'C-m'
+# hopper-function
+tmux split-window -h
+tmux send-keys 'cd ~/work/hopper-functions' 'C-m'
+tmux send-keys 'npm run start' 'C-m'
 
-tmux split-window -v
-tmux send-keys 'cd ~/work/l/www/lancers/frontend' 'C-m'
+# ngrok
+tmux split-window -h
+tmux send-keys 'cd ~/work/hopper-functions' 'C-m'
+tmux send-keys 'ngrok http -hostname=icer7.jp.ngrok.io --region jp 7071' 'C-m'
+
+# 最初に下に分割したペインに移動
+tmux select-pane -t 3
+
+# hopper
+tmux split-window -h
+tmux send-keys 'cd ~/work/hopper' 'C-m'
+tmux send-keys 'postgres -D /usr/local/var/postgresql@11 &' 'C-m'
+tmux send-keys 'foreman start' 'C-m'
+
