@@ -26,6 +26,6 @@ tmux select-pane -t 3
 tmux split-window -h
 tmux send-keys 'cd ~/work/hopper' 'C-m'
 tmux send-keys 'postgres -D /usr/local/var/postgresql@11 &' 'C-m'
-tmux send-keys 'docker-compose -d' 'C-m'
+tmux send-keys 'docker-compose up -d' 'C-m'
 tmux send-keys 'foreman start' 'C-m'
 
